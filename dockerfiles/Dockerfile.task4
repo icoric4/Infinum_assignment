@@ -1,0 +1,5 @@
+FROM tensorflow/serving:2.3.0
+
+COPY ./checkpoints/ /models/simple_model
+COPY models.config /models/models.config
+ENV MODEL_NAME simple_model
