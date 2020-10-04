@@ -1,7 +1,7 @@
 # Interview tasks - ML Engineer
 
 This is a project that represents my solution 
-to the tasks described in assignment.pdf.
+to the tasks described in [assignment.pdf](assignment.pdf).
 ## Table of Contents
 
 - [Installation](#installation)
