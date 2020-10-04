@@ -14,7 +14,7 @@ to the tasks described in [assignment.pdf](assignment.pdf).
 ## Installation
 
 It is asserted that the environment has a working docker 
-already installed.
+installation.
 
 To make it easier to run training, dataset generation and 
 ablation study, I have created another Dockerfile 
@@ -90,7 +90,7 @@ The results should look something like this:
 ![Results](results.png)
 
 From the results we can see that the MAE loss decreases with more 
-data and that decrease is being saturated with more than 5000 
+data and that the decrease is being saturated with more than 5000 
 samples.
 
 ### Deploying both models:
@@ -101,7 +101,7 @@ the second model on that dataset by running:
 docker run --rm -u $(id -u):$(id -g) -v $(pwd):/mnt/code -it training python train.py --version 2 --dataset_path ./generated_datasets/generated_dataset-5000.csv
 ```
 
-To deploy both models, having them as different versions of the same model, run:
+To deploy both models, having them served as different versions of the same model, run:
 ```
 docker build -f dockerfiles/Dockerfile.task4 -t serving-both .
 docker run -d --rm -p 8502:8501 --name serving-task4 -t serving-both --model_config_file=/models/models.config --model_config_file_poll_wait_seconds=60 --allow_version_labels_for_unavailable_models=true
